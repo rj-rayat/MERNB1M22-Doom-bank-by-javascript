@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Tailwind and daisyUI -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <main class="min-h-screen bg-base-200 w-full p-5">
+        <section class="w-100 p-2.5 shadow-lg border-2 border-base-200 rounded-xl  mx-auto bg-white min-h-100">
+
+
+
+            <header class="h-25 flex justify-between items-center border-b  border-gray-300">
+                <div>
+                    
+
+                    <div class="flex items-center ">
+                        <i  class="fa-solid text-2xl text-red-400 fa-dollar-sign"></i>
+                        <h1 class="text-2xl text-red-400 font-bold">20000</h1>
+                    </div>
+                    <p class="text-xs ml-2">Available Balance</p>
+
+                </div>
+
+                <div>
+                    <button onclick="window.location.href='/'" class="btn btn-outline btn-error">Signout</button>
+                </div>
+
+               
+            </header>
+             
+
+            <div class="grid grid-cols-3 gap-2 mt-5">
+                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                   <div class="text-center ">
+                     <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+
+                    <p class="font-bold mt-1">Add Money</p>
+                   </div>
+                </div>
+                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                   <div class="text-center ">
+                     <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
+                        <i class="fa-solid fa-cash-register"></i>
+                    </div>
+
+                    <p class="font-bold mt-1">Cashout</p>
+                   </div>
+                </div>
+                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                   <div class="text-center ">
+                     <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                    </div>
+
+                    <p class="font-bold mt-1">Transfer</p>
+                   </div>
+                </div>
+                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                   <div class="text-center ">
+                     <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
+                       <i class="fa-solid fa-money-bill-1-wave"></i>
+                    </div>
+
+                    <p class="font-bold mt-1">Paybill</p>
+                   </div>
+                </div>
+                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                   <div class="text-center ">
+                     <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
+                     <i class="fa-solid fa-hands-bound"></i>
+                    </div>
+
+                    <p class="font-bold mt-1">Bonus</p>
+                   </div>
+                </div>
+                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                   <div class="text-center ">
+                     <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <p class="font-bold mt-1">History</p>
+                   </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
