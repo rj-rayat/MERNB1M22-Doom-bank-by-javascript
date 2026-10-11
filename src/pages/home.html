@@ -23,7 +23,7 @@
 
                     <div class="flex items-center ">
                         <i  class="fa-solid text-2xl text-red-400 fa-dollar-sign"></i>
-                        <h1 class="text-2xl text-red-400 font-bold">20000</h1>
+                        <h1 id="current-amount" class="text-2xl text-red-400 font-bold">20000</h1>
                     </div>
                     <p class="text-xs ml-2">Available Balance</p>
 
@@ -37,8 +37,8 @@
             </header>
              
 
-            <div class="grid grid-cols-3 gap-2 mt-5">
-                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+            <div  class="grid grid-cols-3 gap-2 mt-5">
+                <div id="add-money-btn" class="h-20 bg-red-400 shadow-sm rounded-lg flex items-center justify-center">
                    <div class="text-center ">
                      <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
                         <i class="fa-solid fa-sack-dollar"></i>
@@ -47,7 +47,7 @@
                     <p class="font-bold mt-1">Add Money</p>
                    </div>
                 </div>
-                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                <div id="cashout-btn" class="h-20  shadow-sm rounded-lg flex items-center justify-center">
                    <div class="text-center ">
                      <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
                         <i class="fa-solid fa-cash-register"></i>
@@ -56,7 +56,7 @@
                     <p class="font-bold mt-1">Cashout</p>
                    </div>
                 </div>
-                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                <div class="h-20  shadow-sm rounded-lg flex items-center justify-center">
                    <div class="text-center ">
                      <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
                         <i class="fa-solid fa-money-bill-transfer"></i>
@@ -65,7 +65,7 @@
                     <p class="font-bold mt-1">Transfer</p>
                    </div>
                 </div>
-                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                <div class="h-20 shadow-sm rounded-lg flex items-center justify-center">
                    <div class="text-center ">
                      <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
                        <i class="fa-solid fa-money-bill-1-wave"></i>
@@ -74,7 +74,7 @@
                     <p class="font-bold mt-1">Paybill</p>
                    </div>
                 </div>
-                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                <div class="h-20  shadow-sm rounded-lg flex items-center justify-center">
                    <div class="text-center ">
                      <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
                      <i class="fa-solid fa-hands-bound"></i>
@@ -83,9 +83,9 @@
                     <p class="font-bold mt-1">Bonus</p>
                    </div>
                 </div>
-                <div class="h-20 bg-red-100 shadow-sm rounded-lg flex items-center justify-center">
+                <div id="history-btn" class="h-20  shadow-sm rounded-lg flex items-center justify-center">
                    <div class="text-center ">
-                     <div class="h-8 w-8 mx-auto bg-white rounded-sm flex items-center justify-center">
+                     <div class="h-8 w-8 mx-auto  rounded-sm flex items-center justify-center">
                         <i class="fa-solid fa-bell"></i>
                     </div>
 
@@ -94,7 +94,57 @@
                 </div>
             </div>
 
+            <div id="add-money-section" class="">
+                <form class="fieldset  bg-base-200 border-base-300 rounded-box w-full border p-4 mx-auto my-5">
+                    <legend class="fieldset-legend text-2xl text-center mx-auto">Add Money</legend>
+
+                    <label class="label">Select Bank</label>
+                    <select id="bank-selector" class="select w-full">
+                        <option disabled selected>Select Bank</option>
+                        <option>DBBL</option>
+                        <option>BRAC</option>
+                        <option>CITY</option>
+                    </select>
+                    <label class="label">Account</label>
+                    <input id="account" type="text" class="input w-full" placeholder="Your 11 digit account number" />
+
+                    <label class="label">Balance</label>
+                    <input id="balance" type="text" class="input w-full" placeholder="Your balance" />
+
+                    <label class="label">PIN</label>
+                    <input id="userPin" type="text" class="input w-full" placeholder="Enter pin" />
+
+                    <button type="submit" id="add-money-feature-btn" class="btn btn-error">Add Money</button>
+                </form>
+            </div>
+
+            <div id="cashout-section" class="hidden py-5">
+                <form class="fieldset my bg-base-200 border-base-300 rounded-box w-full border p-4 mx-auto my-5">
+                    <legend class="fieldset-legend text-2xl text-center mx-auto">Add Money</legend>
+
+                    
+                    <label class="label">Agent Number</label>
+                    <input type="text" class="input w-full" placeholder="Your 11 digit account number" />
+
+                    <label class="label">Cashout Balance</label>
+                    <input type="text" class="input w-full" placeholder="Your balance" />
+
+                    <label class="label">PIN</label>
+                    <input type="text" class="input w-full" placeholder="Enter pin" />
+
+                    <button id="" class="btn btn-error">Cashout</button>
+                </form>
+            </div>
+
+            <div id="histoy-section" class="hidden">
+                History
+            </div>
+
+
+
         </section>
     </main>
+
+    <script src="/src/js/home.js"></script>
 </body>
 </html>
