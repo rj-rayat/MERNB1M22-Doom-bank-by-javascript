@@ -120,30 +120,44 @@
 
             <div id="cashout-section" class="hidden py-5">
                 <form class="fieldset my bg-base-200 border-base-300 rounded-box w-full border p-4 mx-auto my-5">
-                    <legend class="fieldset-legend text-2xl text-center mx-auto">Add Money</legend>
+                    <legend class="fieldset-legend text-2xl text-center mx-auto">Cashout</legend>
 
                     
                     <label class="label">Agent Number</label>
-                    <input type="text" class="input w-full" placeholder="Your 11 digit account number" />
+                    <input id="agent-number" type="text" class="input w-full" placeholder="Your 11 digit account number" />
 
                     <label class="label">Cashout Balance</label>
-                    <input type="text" class="input w-full" placeholder="Your balance" />
+                    <input id="cashout-balance" type="text" class="input w-full" placeholder="Your balance" />
 
                     <label class="label">PIN</label>
-                    <input type="text" class="input w-full" placeholder="Enter pin" />
+                    <input id="user-cashout-pin" type="text" class="input w-full" placeholder="Enter pin" />
 
-                    <button id="" class="btn btn-error">Cashout</button>
+                    <button id="cashout-form-btn" class="btn btn-error">Cashout</button>
                 </form>
             </div>
 
-            <div id="histoy-section" class="hidden">
-                History
+            <div id="histoy-section" class="hidden py-4">
+              
+                   
+               
             </div>
 
 
 
         </section>
-    </main>
+
+        <!-- You can open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+        <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+            <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+        
+            <p id="alert-text" class="py-4"></p>
+        </div>
+        </dialog>
+            </main>
 
     <script src="/src/js/home.js"></script>
 </body>

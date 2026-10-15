@@ -12,6 +12,12 @@ function togglePage(id){
     document.getElementById('histoy-section').classList.add('hidden');
     document.getElementById(id).classList.remove('hidden')
 }
+
+function alert(text){
+     document.getElementById("my_modal_3").showModal();
+       const alert = document.getElementById("alert-text")
+       alert.innerText = text
+}
 document.getElementById('cashout-btn').addEventListener('click', function(){
    
    
@@ -51,7 +57,6 @@ document.getElementById('add-money-feature-btn').addEventListener('click', funct
 
     const currentAmount = parseInt(document.getElementById('current-amount').innerText);
 
-    console.log(currentAmount)
 
     if (bankSelect == 'Select Bank'){
         alert("Kindly select your baper bank");
@@ -72,6 +77,12 @@ document.getElementById('add-money-feature-btn').addEventListener('click', funct
         return ;
     }
 
+    else if (balance.length == 0)
+    {
+        alert("Kindly add money");
+        return 0;
+    }
+
     else if(pin != userPin){
         alert("Pin is invalid");
         return;
@@ -81,9 +92,94 @@ document.getElementById('add-money-feature-btn').addEventListener('click', funct
        const totalAmount = currentAmount + amount;
        const h1 = document.getElementById('current-amount');
        h1.innerText = totalAmount;
-       alert(`${amount} tk added sucsessfully`)
 
+        const date = new Date();
+        const localTime = date.toString();
+       const div = document.getElementById('histoy-section')
+       const p = document.createElement('p')
+       p.innerText =  `Added ${amount} tk at ${localTime}`
+        p.classList.add("bg-amber-100");
+        p.classList.add("p-2.5");
+        p.classList.add("rounded-lg");
+        p.classList.add("mt-2.5")
+
+       
+
+       div.appendChild(p)
+      
+        alert(`${amount} tk added at ${localTime}`)
        
     }
     
-})
+});
+
+
+// cashout money feature
+
+document.getElementById("cashout-form-btn").addEventListener('click', function(event){
+    event.preventDefault();
+
+    const account = document.getElementById('agent-number').value;
+    const accountNumber = parseInt(account);
+    const balance = document.getElementById('cashout-balance').value;
+    const amount = parseInt(balance);
+    const userPin = document.getElementById('user-cashout-pin').value
+    const pin = '1234';
+
+    if (account != accountNumber){
+        alert("Kindly enter numeric number");
+        return ;
+    } 
+    else if(account.length < 5){
+        alert("Kindly input 11 digit number");
+        return;
+    }
+
+    else if(amount == 0 || amount < 0){
+        alert("Kindly add more than 0");
+        return ;
+    
+    }
+
+     else if (balance.length == 0)
+    {
+        alert("Kindly add money");
+        return 0;
+    }
+    else if(pin != userPin){
+        alert("Pin is invalid");
+        return;
+    }
+    else{
+
+       const h1 = document.getElementById('current-amount').innerText;
+       const currentBalance = parseInt(h1);
+       if (amount > currentBalance)
+       {
+            alert("You are gorib plz sopno dekha bondo koro");
+            return;
+       }
+
+       else {
+            const totalAmount = currentBalance - amount;
+            document.getElementById("current-amount").innerText = totalAmount;
+           
+            const date = new Date();
+            const localTime = date.toString();
+       
+            const div = document.getElementById('histoy-section')
+            const p = document.createElement('p');
+
+            p.innerText =  `Cashout ${amount} tk at ${localTime}`
+            p.classList.add("bg-red-100");
+            p.classList.add("p-2.5");
+            p.classList.add("rounded-lg");
+            p.classList.add("mt-2.5")
+
+            div.appendChild(p);
+            alert(`Cashout ${amount} tk at ${localTime}`)
+       }
+
+      
+    }
+});
